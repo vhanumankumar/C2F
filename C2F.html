@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celsius to Fahrenheit Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="button"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body bgcolor = "pink">
+
+<div class="container">
+    <h1>Celsius to Fahrenheit Converter</h1>
+    <label for="celsius">Celsius:</label>
+    <input type="text" id="celsius" placeholder="Enter Celsius">
+    <input type="button" value="Convert" onclick="convertTemperature()">
+    <p id="result"></p>
+</div>
+
+<script>
+    function convertTemperature() {
+        var celsius = document.getElementById('celsius').value;
+        if (isNaN(celsius) || celsius === '') {
+            document.getElementById('result').textContent = 'Please enter a valid number.';
+            return;
+        }
+        var fahrenheit = (celsius * 9/5) + 32;
+        document.getElementById('result').textContent = celsius + '°C is equal to ' + fahrenheit.toFixed(2) + '°F';
+    }
+</script>
+
+</body>
+</html>
